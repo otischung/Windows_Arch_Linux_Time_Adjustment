@@ -10,6 +10,7 @@ if [ ! -f /usr/bin/ntpdate ]; then
 fi
 
 systemctl stop --now ntpd.service
+timedatectl set-local-rtc 1 --adjust-system-clock
 ntpdate -u 0.arch.pool.ntp.org
 # ntpdate -u 1.arch.pool.ntp.org
 # ntpdate -u 2.arch.pool.ntp.org
